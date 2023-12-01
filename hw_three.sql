@@ -1,3 +1,3 @@
-select * from homework.persons
-where age > 27
-order by age desc ;
+select product_name from homework.orders
+join homework.customers c on c.id = orders.customer_id
+where lower(name) = lower('alexey');

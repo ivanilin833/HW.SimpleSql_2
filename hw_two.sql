@@ -1,5 +1,12 @@
-insert into homework.persons values ('ivan', 'ivankv', 11,'89638945749','MOSCOW');
-insert into homework.persons values ('masss', 'iov', 30,'89822112321','MSC');
+create table homework.orders
+(
+    id           smallserial primary key,
+    date         date,
+    customer_id  smallint,
+    product_name varchar(20),
+    amount       money,
+    constraint fk_order
+        foreign key (customer_id)
+            references homework.customers (id)
+);
 
-select name, surname from homework.persons
-where city_of_living='MOSCOW'
